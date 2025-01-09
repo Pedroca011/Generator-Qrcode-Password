@@ -1,26 +1,25 @@
 # Gerador de QR Code e Senhas
 
-Bem-vindo ao **Gerador de QR Code e Senhas**! Este projeto permite criar QR Codes personalizados e gerar senhas seguras para diversas finalidades de forma simples e eficiente.
+Bem-vindo ao **Gerador de QR Code e Senhas**! Este projeto permite criar QR Codes diretamente no terminal e gerar senhas seguras utilizando configurações especificadas no arquivo `.env`.
 
 ## Funcionalidades
 
-- **Gerador de QR Code**: Crie QR Codes a partir de links, textos ou outras informações.
-- **Gerador de Senhas**: Obtenha senhas seguras com opções de personalização, como tamanho, uso de caracteres especiais, números, letras maiúsculas e minúsculas.
+- **Gerador de QR Code no Terminal**: Utiliza a biblioteca [qrcode-terminal](https://www.npmjs.com/package/qrcode-terminal) para exibir QR Codes diretamente no console.
+- **Gerador de Senhas**: Cria senhas seguras com base nas configurações definidas no arquivo `.env`, permitindo personalização como tamanho e tipos de caracteres.
 
 ## Tecnologias Utilizadas
 
-- **Frontend**: ReactJS com Tailwind CSS para estilização.
-- **Backend**: Node.js com Express para gerenciamento de APIs.
+- **Node.js**: Plataforma principal para execução do projeto.
 - **Bibliotecas**: 
-  - [qrcode](https://www.npmjs.com/package/qrcode) para geração de QR Codes.
-  - [crypto](https://nodejs.org/api/crypto.html) para geração de senhas seguras.
-- **Design**: Protótipo desenvolvido no Figma.
+  - [qrcode-terminal](https://www.npmjs.com/package/qrcode-terminal) para geração de QR Codes no terminal.
+  - Configurações de senha gerenciadas via arquivo `.env`.
 
 ## Como Rodar o Projeto
 
 ### Pré-requisitos
 - Node.js instalado ([Baixe aqui](https://nodejs.org/)).
 - Gerenciador de pacotes (npm ou yarn).
+- Arquivo `.env` configurado.
 
 ### Passos para Configuração
 1. Clone o repositório:
@@ -34,23 +33,22 @@ Bem-vindo ao **Gerador de QR Code e Senhas**! Este projeto permite criar QR Code
    npm install
    ```
 
-3. Inicie o servidor:
-   ```bash
-   npm start
-   ```
+3. Configure o arquivo `.env` com as opções desejadas para a geração de senhas (exemplo incluído no repositório).
 
-4. Acesse a aplicação em `http://localhost:3000`.
+4. Execute o projeto:
+   ```bash
+   node index.js
+   ```
 
 ## Estrutura do Projeto
 ```
 qrcode-password-generator/
-├── public/
 ├── src/
-│   ├── components/
-│   │   ├── QRCodeGenerator.jsx
-│   │   ├── PasswordGenerator.jsx
-│   ├── App.jsx
 │   ├── index.js
+│   ├── utils/
+│   │   ├── generateQRCode.js
+│   │   ├── generatePassword.js
+├── .env
 ├── package.json
 └── README.md
 ```
